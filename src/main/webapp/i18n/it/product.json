@@ -1,0 +1,30 @@
+{
+    "hipsterappApp": {
+        "product" : {
+            "home": {
+                "title": "Products",
+                "createLabel": "Genera un nuovo Product",
+                "createOrEditLabel": "Genera o modifica un Product"
+            },
+            "created": "&Egrave; stato generato un nuovo Product con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Product identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Product con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Product {{ id }}?"
+            },
+            "detail": {
+                "title": "Product"
+            },
+            "name": "Name",
+            "picture": "Picture",
+            "city": "City",
+            "provider": "Provider",
+            "price": "Price",
+            "rating": "Rating",
+            "stars": "Stars",
+            "description": "Description",
+            "distance": "Distance",
+            "active": "Active"
+        }
+    }
+}

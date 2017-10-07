@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    
+
+
+    <!--
+        Added the entity Product.
+    -->
+    <changeSet id="20171004235711-1" author="jhipster">
+        
+        <createTable tableName="product">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="picture" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="city" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="provider" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="price" type="decimal(10,2)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="rating" type="${floatType}">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="stars" type="${floatType}">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="distance" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="active" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+
+        <sql
+            splitStatements="true"
+            stripComments="true">INSERT INTO product (id, name, picture, city, provider, price, rating, stars, description, distance, active) VALUES (1001, 'Hyatt Regency', 'https://ctsassets1.check24.de/size=x400/di=1/nfc=301/source=aHR0cDovL2ZvdG8tb3JpZ2luLmhyc3N0YXRpYy5jb20vZm90by8wLzAvNy8xLzAwNzExMi8wMDcxMTJfc3VfODkyMDMwMC5qcGc=!71983c/picture.jpg', 'Köln', 'hotels.com', 205.00, '1.14999998', '5', 'Das luxuriöse Business- and Konferenzhotel empfängt Sie zu einem wundervollen Aufenthalt in eleganten Zimmern und Suiten, die keine Wünsche offen lassen. Genießen Sie internationale Küche im Restaurant und entspannen Sie danach an der Bar.', '0.939999998', true);
+        </sql>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

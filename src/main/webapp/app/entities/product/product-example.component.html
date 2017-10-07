@@ -1,0 +1,54 @@
+<section>
+
+    <section class="container" style="padding: 10px">
+        <div class="row active-with-click">
+
+            <div *ngFor="let product of products ;trackBy: trackId" >
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <article class="material-card blue">
+                        <h2>
+                            <span>{{product.name}} </span>
+                            <strong>
+                                <i class="fa fa-fw fa-star"></i>
+                                {{product.provider}} <span style="position: absolute; right: 80px; top: 40px; font-size: 24px; font-weight: bold;">{{product.price}} €</span> 
+                            </strong>
+                            <a class="mc-btn-action" (click)="removeProduct(product.id)">
+                                <i class="fa fa-fw fa-close"></i>
+                            </a>
+                        </h2>
+                        <div class="mc-content">
+                            <div class="img-container">
+                                <img class="img-responsive" src="{{product.picture}}">
+                            </div>
+
+                            <div class="mc-description">
+                                <p><strong>{{product.city}}:</strong> {{product.distance}} km bis zum Zentrum</p>
+                                <p>
+                                    <strong>Bewertung:</strong> {{product.rating}}<br>
+                                    <strong>Sterne:</strong> {{product.stars}}<br>
+                                    <strong>Preis:</strong> {{product.price}}€
+                                </p>
+                                <div [innerHTML]="product.description">
+                                </div>
+                            </div>
+                        </div>
+                        <a class="mc-btn-action" (click)="showProductDetails(product.id, $event, $element)">
+                            <i class="fa fa-bars"></i>
+                        </a>
+
+                        <div class="mc-footer">
+                            <h4>
+                                Social
+                            </h4>
+                            <a class="fa fa-fw fa-facebook"></a>
+                            <a class="fa fa-fw fa-twitter"></a>
+                            <a class="fa fa-fw fa-linkedin"></a>
+                            <a class="fa fa-fw fa-google-plus"></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>

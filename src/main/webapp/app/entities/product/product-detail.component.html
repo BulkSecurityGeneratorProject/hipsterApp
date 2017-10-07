@@ -1,0 +1,62 @@
+
+<div *ngIf="product">
+    <h2><span jhiTranslate="hipsterappApp.product.detail.title">Product</span> {{product.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="hipsterappApp.product.name">Name</span></dt>
+        <dd>
+            <span>{{product.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="hipsterappApp.product.picture">Picture</span></dt>
+        <dd>
+            <!-- <span>{{product.picture}}</span> -->
+            <img class="img-responsive" src="{{product.picture}}">
+        </dd>
+        <dt><span jhiTranslate="hipsterappApp.product.city">City</span></dt>
+        <dd>
+            <span>{{product.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="hipsterappApp.product.provider">Provider</span></dt>
+        <dd>
+            <span>{{product.provider}}</span>
+        </dd>
+        <dt><span jhiTranslate="hipsterappApp.product.price">Price</span></dt>
+        <dd>
+            <span>{{product.price}}</span>
+        </dd>
+        <dt><span jhiTranslate="hipsterappApp.product.rating">Rating</span></dt>
+        <dd>
+            <span>{{product.rating}}</span>
+        </dd>
+        <dt><span jhiTranslate="hipsterappApp.product.stars">Stars</span></dt>
+        <dd>
+            <span>{{product.stars}}</span>
+        </dd>
+        <dt><span jhiTranslate="hipsterappApp.product.description">Description</span></dt>
+        <dd>
+            <span>{{product.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="hipsterappApp.product.distance">Distance</span></dt>
+        <dd>
+            <span>{{product.distance}}</span>
+        </dd>
+        <dt><span jhiTranslate="hipsterappApp.product.active">Active</span></dt>
+        <dd>
+            <span>{{product.active}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'product/'+ product.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

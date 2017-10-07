@@ -1,0 +1,11 @@
+version: '2'
+services:
+    hipsterapp-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/hipsterapp/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=hipsterapp
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
