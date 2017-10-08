@@ -68,10 +68,7 @@
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
 
-        <sql
-            splitStatements="true"
-            stripComments="true">INSERT INTO product (id, name, picture, city, provider, price, rating, stars, description, distance, active) VALUES (1001, 'Hyatt Regency', 'https://ctsassets1.check24.de/size=x400/di=1/nfc=301/source=aHR0cDovL2ZvdG8tb3JpZ2luLmhyc3N0YXRpYy5jb20vZm90by8wLzAvNy8xLzAwNzExMi8wMDcxMTJfc3VfODkyMDMwMC5qcGc=!71983c/picture.jpg', 'Köln', 'hotels.com', 205.00, '1.14999998', '5', 'Das luxuriöse Business- and Konferenzhotel empfängt Sie zu einem wundervollen Aufenthalt in eleganten Zimmern und Suiten, die keine Wünsche offen lassen. Genießen Sie internationale Küche im Restaurant und entspannen Sie danach an der Bar.', '0.939999998', true);
-        </sql>
+       
         
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
