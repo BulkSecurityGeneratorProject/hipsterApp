@@ -20,13 +20,20 @@ spring:
         livereload:
             enabled: false
     datasource:
+        # type: com.zaxxer.hikari.HikariDataSource
+        # url: jdbc:postgresql://mydevdb.cnwxczoilorh.us-east-1.rds.amazonaws.com:5432/postgres
+        # username: mydbname
+        # password: mydevuser
+
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://mydevdb.cnwxczoilorh.us-east-1.rds.amazonaws.com:5432/postgres
-        username: mydbname
-        password: mydevuser
+        url: jdbc:h2:mem:wkalk;DB_CLOSE_DELAY=-1
+        username: sa
+        password: sa
     jpa:
-        database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
-        database: POSTGRESQL
+        # database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
+        # database: POSTGRESQL
+        database-platform: io.github.jhipster.domain.util.FixedH2Dialect
+        database: H2
         show-sql: false
         properties:
             hibernate.id.new_generator_mappings: true

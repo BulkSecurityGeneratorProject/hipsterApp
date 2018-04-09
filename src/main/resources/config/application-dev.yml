@@ -25,13 +25,22 @@ spring:
     jackson:
         serialization.indent_output: true
     datasource:
+        # type: com.zaxxer.hikari.HikariDataSource
+        # url: jdbc:postgresql://localhost:5432/postgres
+        # username: postgres
+        # password: postgres
+
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/postgres
-        username: postgres
-        password: postgres
+        url: jdbc:h2:mem:wkalk;DB_CLOSE_DELAY=-1
+        username: sa
+        password: sa
+
+
     jpa:
-        database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
-        database: POSTGRESQL
+        # database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
+        # database: POSTGRESQL
+        database-platform: io.github.jhipster.domain.util.FixedH2Dialect
+        database: H2
         show-sql: true
         properties:
             hibernate.id.new_generator_mappings: true
